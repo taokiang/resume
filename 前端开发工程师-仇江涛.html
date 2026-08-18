@@ -100,6 +100,83 @@
             font-size: 14px;
             margin: 8px 0;
         }
+        @page {
+            size: A4;
+            margin: 9mm 11mm;
+        }
+        @media print {
+            html, body {
+                width: auto;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                max-width: none;
+                font-size: 10.5pt;
+                line-height: 1.32;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            h1 {
+                margin: 0 0 2px;
+                font-size: 24px;
+            }
+            .subhead {
+                margin-bottom: 8px;
+                padding-bottom: 5px;
+                font-size: 16px;
+            }
+            .contact {
+                margin-bottom: 8px;
+                padding: 5px 8px;
+                font-size: 12px;
+            }
+            h2 {
+                margin: 10px 0 5px;
+                padding-left: 6px;
+                border-left-width: 4px;
+                font-size: 17px;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+            p {
+                margin: 4px 0;
+            }
+            .job-title, .project-title {
+                line-height: 1.25;
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+            ul {
+                margin-top: 2px;
+                margin-bottom: 6px;
+                padding-left: 18px;
+            }
+            li {
+                margin-bottom: 2px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .skills-grid {
+                gap: 4px;
+                margin: 4px 0;
+            }
+            .skill-tag {
+                padding: 2px 8px;
+                font-size: 11px;
+            }
+            .tech-stack {
+                margin: 4px 0;
+                padding: 4px 8px;
+                font-size: 12px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .project-block {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,7 +191,7 @@
 
 <!-- 个人优势 -->
 <h2>个人优势</h2>
-<p>12年前端研发经验，历经<strong>电商、金融科技、信托、能源交易</strong>等高并发、高可用、强稳定性业务场景。擅长前端架构设计、微前端中台、高频数据可视化、混合App开发、工程化与性能极致优化。主导高并发场景下交易链路重构、信托微前端中台（含AI辅助决策）、金融实时仪表盘、信用卡金融混合App</strong>等核心项目，具备从0到1搭建前端架构、技术选型、团队规范制定、全链路性能与稳定性建设能力。</p>
+<p>12 年前端研发经验，长期服务金融科技、信托及互联网交易业务，具备复杂业务系统架构设计与稳定交付经验。核心能力集中在 Vue/TypeScript、微前端工程治理、实时数据可视化与混合 App 开发，能够推进性能优化、可观测性和研发规范落地。曾主导 8 个业务模块的微前端治理并将首屏加载速度提升 55%，也完成金融实时大屏和信用卡业务 H5 等核心项目。</p>
 
 <!-- 教育背景 -->
 <h2>教育背景</h2>
@@ -123,37 +200,28 @@
 <!-- 专业技能 -->
 <h2>专业技能</h2>
 <div class="skills-grid">
-    <span class="skill-tag">React/Next.js</span>
-    <span class="skill-tag">TypeScript</span>
-    <span class="skill-tag">微前端(Qiankun)</span>
-    <span class="skill-tag">Monorepo(pnpm)</span>
-    <span class="skill-tag">ECharts/D3/WebGL</span>
-    <span class="skill-tag">WebSocket/SSE</span>
-    <span class="skill-tag">LangChain.js / AI集成</span>
-    <span class="skill-tag">混合App / JSBridge</span>
-    <span class="skill-tag">Vite/Webpack</span>
-    <span class="skill-tag">Sentry/OpenTelemetry</span>
-    <span class="skill-tag">CI/CD</span>
+    <span class="skill-tag">JavaScript (ES6+) + HTML5/CSS3</span>
+    <span class="skill-tag">Vue2/Vue3 + TypeScript</span>
+    <span class="skill-tag">Qiankun + pnpm Monorepo</span>
+    <span class="skill-tag">Vite/Webpack + CI/CD</span>
+    <span class="skill-tag">ECharts + WebSocket/SSE</span>
+    <span class="skill-tag">Web Worker + 性能分析</span>
+    <span class="skill-tag">混合 App + JSBridge</span>
+    <span class="skill-tag">离线包 + WebView 优化</span>
+    <span class="skill-tag">Sentry + OpenTelemetry</span>
 </div>
-<p>· 核心框架：React、Next.js、Redux Toolkit、React Router<br>
-· 高性能可视化：Canvas、Web Worker、虚拟列表、流式渲染、高频数据缓冲优化<br>
-· 混合开发：JSBridge设计、离线包策略、WebView性能优化、移动端适配（rem/vw）、安全加密<br>
-· 工程化：Monorepo、组件库、代码规范、Git Hooks、自动化部署<br>
-· 监控与稳定性：前端可观测体系、性能埋点、异常告警、错误兜底机制<br>
-· 业务方向：金融/能源交易系统、电商高并发、中台管理、AI辅助决策、信用卡金融</p>
 
 <!-- 工作经历 -->
 <h2>工作经历</h2>
 
 <div class="job-title">
     <span class="company">西部信托有限公司 · 高级前端开发工程师</span>
-    <span class="date">2023.10 – 2026.06</span>
+    <span class="date">2023.10 – 2026.07</span>
 </div>
 <ul>
-    <li>担任信托业务中台管理系统前端负责人，主导<strong>微前端架构升级（Qiankun+Monorepo）</strong>，将8个核心业务模块解耦为独立子应用，首屏加载速度<strong>提升55%</strong>，微应用切换耗时缩短40%。</li>
-    <li>构建金融级前端稳定性体系：基于Sentry+OpenTelemetry搭建可观测平台，系统可用性提升至<strong>99.95%</strong>，MTTR降低50%。</li>
-    <li>主导<strong>AI智能风控与合同审核模块</strong>前端落地，实现信托产品风险评估、客户画像分析及合同关键信息提取，辅助业务决策效率提升40%。</li>
-    <li>制定前端工程化规范，引入CI/CD自动化流水线，团队并行开发效率提升35%。</li>
+    <li>担任信托业务中台前端负责人，负责架构方案、技术评审、公共能力建设和发布流程治理，推动多个核心业务模块独立交付。</li>
+    <li>建设基于 Sentry 与 OpenTelemetry 的前端可观测能力，完善异常采集、链路定位、告警及问题闭环流程，提升线上问题定位与恢复效率。</li>
+    <li>统一代码规范、公共组件和 CI/CD 流程，降低多子应用并行协作及版本发布成本。</li>
 </ul>
 
 <div class="job-title">
@@ -161,9 +229,9 @@
     <span class="date">2017.09 – 2023.10</span>
 </div>
 <ul>
-    <li>负责金融科技平台核心业务模块开发与组件化建设，封装通用图表库、表单组件，支撑全公司10+业务线使用，减少重复代码约40%。</li>
-    <li>主导<strong>金融仪表盘Dashboard</strong>及<strong>维信卡卡贷混合App Web模块</strong>（详见下方核心项目），实现实时监控大屏与信用卡金融业务H5。</li>
-    <li>引入Redux状态管理与Axios统一拦截器，提升接口错误处理与加载状态的健壮性，线上故障率降低25%。</li>
+    <li>推进金融科技平台组件化建设，沉淀通用图表与表单组件，支撑公司 10+ 条业务线复用。</li>
+    <li>承担实时数据产品与混合 App 方向的核心前端交付，负责方案设计、跨端联调和线上问题处理。</li>
+    <li>统一 Vuex 状态管理、Axios 请求封装和异常处理规范，提升多业务模块的开发一致性与运行稳定性。</li>
 </ul>
 
 <div class="job-title">
@@ -171,79 +239,68 @@
     <span class="date">2014.06 – 2017.09</span>
 </div>
 <ul>
-    <li>参与格瓦拉电影PC端核心交易链路（商品详情/购物车/订单/支付）前后端分离重构，支撑<strong>高并发大促流量</strong>，页面响应时间降低35%。</li>
-    <li>负责高并发模块开发及线上稳定性保障，设计统一错误兜底和重试机制，保证大促期间核心链路可用性99.99%。</li>
+    <li>推进格瓦拉电影 PC 端商品详情、购物车、订单及支付链路的前后端分离重构，页面响应时间降低 35%。</li>
+    <li>建设交易链路错误兜底与重试机制，参与大促期间的性能优化和线上保障，增强高并发场景下的业务连续性。</li>
 </ul>
 
 <!-- 项目经历 -->
 <h2>核心项目</h2>
 
 <!-- 信托业务中台管理系统 -->
+<section class="project-block">
 <div class="project-title">
-    <span class="project-name">信托业务中台管理系统（微前端架构升级 + AI智能模块）</span>
-    <span class="date">2023.10 – 至今</span>
+    <span class="project-name">信托业务中台管理系统（微前端架构升级 + AI 智能模块）</span>
+    <span class="date">2023.10 – 2026.07</span>
 </div>
 <div class="tech-stack">
-    <strong>技术栈：</strong>React + TypeScript + Vite + Qiankun + pnpm + Monorepo + Ant Design + LangChain.js + Qwen3-Max API + Web Worker
+    <strong>技术栈：</strong>Vue3 + TypeScript + Vite + Qiankun + pnpm Monorepo + Ant Design Vue + SSE + PDF.js + Web Worker
 </div>
-<p><span class="highlight">核心成果：</span>首屏加载提速55%，微应用切换耗时缩短40%，代码复用率70%+，AI模块使合同审核效率提升60%，风险识别准确率达92%</p>
-<p><span class="highlight">项目难点与解决方案：</span></p>
+<p><span class="highlight">核心成果：</span>完成 8 个核心业务模块的微前端拆分与统一治理，首屏加载速度提升 55%；交付 AI 合同审核的完整前端交互链路，支撑合同摘要、风险点识别及反馈流程线上化。</p>
+<p><span class="highlight">关键工作：</span></p>
 <ul>
-    <li><strong>微前端架构选型与落地：</strong>采用Qiankun + pnpm Monorepo，将9个核心模块拆分为独立子应用，实现技术栈无关、独立部署。</li>
-    <li><strong>Monorepo 工程化：</strong>基于pnpm workspace统一管理，构建速度提升40%。</li>
-    <li><strong>Qiankun 核心难点攻克：</strong>样式隔离、跨应用通信、公共依赖共享（CDN externals）、页面状态保持。</li>
-    <li><strong>AI 智能模块（信托合同审核、风险评估、客户画像）：</strong>
-        <ul>
-            <li>前端实现文档上传与预览（pdf.js + mammoth.js提取文本供展示），通过后端API完成文档解析、向量检索与LLM分析（基于LangChain + 大模型），采用SSE/fetch流式返回分析结果，前端逐字渲染。</li>
-            <li>长文本处理放入Web Worker（用于前端缓存与渲染优化），历史结果缓存IndexedDB，相同文档二次查看无延迟。</li>
-            <li>提供合同摘要生成、风险点高亮、策略推荐及用户反馈评分功能。</li>
-        </ul>
-    </li>
-    <li><strong>性能优化：</strong>骨架屏+预加载+路由懒加载，首屏可交互时间降至1.2s；虚拟列表保持60FPS；错误边界+Sentry上报。</li>
+    <li><strong>架构拆分：</strong>基于 Qiankun 划分主应用与业务子应用，通过 pnpm workspace 管理公共组件、工具及配置，实现子应用独立开发和部署。</li>
+    <li><strong>微前端治理：</strong>解决样式隔离、跨应用通信、公共依赖复用和页面状态保持问题，降低多应用协作与维护成本。</li>
+    <li><strong>加载性能：</strong>结合路由懒加载、资源预加载和骨架屏优化关键加载路径，并通过监控数据验证首屏性能改善。</li>
+    <li><strong>AI 前端交互：</strong>完成文档上传与预览、SSE 流式结果展示、合同摘要、风险点高亮及反馈评分；文档解析、向量检索和 LLM 推理由后端服务完成。</li>
+    <li><strong>长文本体验：</strong>使用 Web Worker 分担长文本处理，通过 IndexedDB 缓存历史分析结果，减少重复请求和主线程阻塞。</li>
 </ul>
+</section>
 
 <!-- 维信金科金融仪表盘 -->
+<section class="project-block">
 <div class="project-title">
     <span class="project-name">维信金科金融仪表盘（实时监控大屏）</span>
     <span class="date">2021.03 – 2022.08</span>
 </div>
 <div class="tech-stack">
-    <strong>技术栈：</strong>React + Webpack + ECharts + Redux + Axios + WebSocket + rem/flex/Grid + 媒体查询
+    <strong>技术栈：</strong>Vue2 + Webpack + ECharts + Vuex + Axios + WebSocket + 响应式大屏适配
 </div>
-<p><span class="highlight">核心成果：</span>支撑全公司管理层实时查看交易量、活跃度、风险指标，首屏加载时间<strong>从2.5s优化至1.2s</strong>，大屏适配覆盖10+种分辨率，页面渲染帧率稳定60FPS。</p>
-<p><span class="highlight">项目难点与解决方案（聚焦Web大屏）：</span></p>
+<p><span class="highlight">核心成果：</span>交付面向管理层的交易量、活跃度和风险指标实时看板，首屏加载时间从 <strong>2.5s 降至 1.2s</strong>，并在多种常用展示分辨率下保持稳定呈现。</p>
+<p><span class="highlight">关键工作：</span></p>
 <ul>
-    <li><strong>多种分辨率适配：</strong>rem+vw/vh+flex+Grid混合布局，CSS媒体查询适配边缘情况。</li>
-    <li><strong>实时数据流：</strong>WebSocket + 数据缓冲队列 + 节流更新，ECharts appendData增量渲染，性能提升3倍。</li>
-    <li><strong>海量历史数据：</strong>ECharts dataset+dataZoom+采样策略；多图表联动通过Redux共享状态，仅重绘一次。</li>
-    <li><strong>动画体验：</strong>requestAnimationFrame数字滚动，CSS3 GPU加速；骨架屏+淡入过渡。</li>
-    <li><strong>稳定性：</strong>WebSocket管理器（自动重连、心跳）。</li>
+    <li><strong>实时渲染：</strong>使用 WebSocket 接收数据，通过缓冲队列、节流更新和 ECharts 增量渲染控制高频刷新开销。</li>
+    <li><strong>数据交互：</strong>结合 dataset、dataZoom 与采样策略承载历史数据，并通过 Vuex 管理多图表联动状态及定向更新。</li>
+    <li><strong>运行稳定性：</strong>封装包含心跳检测、断线重连和异常恢复的 WebSocket 管理器，并通过弹性布局、视口单位及媒体查询完成多分辨率适配。</li>
 </ul>
+</section>
 
 <!-- 维信卡卡贷混合Web开发 -->
+<section class="project-block">
 <div class="project-title">
-    <span class="project-name">维信卡卡贷App 混合Web开发（信用卡金融业务）</span>
+    <span class="project-name">维信卡卡贷 App 混合 Web 开发（信用卡金融业务）</span>
     <span class="date">2018.10 – 2020.06</span>
 </div>
 <div class="tech-stack">
-    <strong>技术栈：</strong>React + Webpack + JSBridge + 离线包（增量更新） + IndexedDB/localStorage + rem/vw移动端适配 + RSA/AES加密
+    <strong>技术栈：</strong>Vue2 + Webpack + JSBridge + 离线包（增量更新） + IndexedDB/localStorage + rem/vw 移动端适配 + RSA/AES 加密
 </div>
-<p><span class="highlight">核心成果：</span>支撑App内信用卡还款、贷款申请、账单查询等核心业务H5模块，日均PV 200w+，首屏加载时间<strong>从2.2s优化至0.8s</strong>，JSBridge调用成功率<strong>99.9%</strong>，离线包覆盖率<strong>95%</strong>。</p>
-<p><span class="highlight">项目难点与解决方案（混合App Web开发）：</span></p>
+<p><span class="highlight">核心成果：</span>主导信用卡还款、贷款申请和账单查询等核心 H5 模块建设，首屏加载时间从 <strong>2.2s 降至 0.8s</strong>，相关方案后续复用于公司其他金融 App。</p>
+<p><span class="highlight">关键工作：</span></p>
 <ul>
-    <li><strong>业务场景：</strong>为维信卡卡贷App（信用卡管理/贷款平台）提供嵌入式H5页面，包括信用卡还款、分期申请、账单查询、额度管理、在线客服、营销活动等高频交互模块，需与Native（iOS/Android）深度协作。</li>
-    <li><strong>JSBridge 设计与通信优化：</strong>
-        <ul>
-            <li>统一封装Native与Web双向通信协议（scheme + 回调ID机制），支持异步回调与Promise化，兼容iOS WKWebView与Android WebView。</li>
-            <li>实现获取设备信息、调用Native相机/相册、本地生物识别等20+接口。</li>
-            <li>针对Android低版本WebView兼容性，设计<strong>iframe轮询降级方案</strong>，保证通信成功率。</li>
-        </ul>
-    </li>
-    <li><strong>离线包策略：</strong>基于<strong>增量更新</strong>的离线包方案，前端配合版本检测与强制更新，减少流量消耗；本地无资源时自动回源CDN。</li>
-    <li><strong>WebView 性能优化：</strong>预加载WebView + 离线包 + 骨架屏，白屏时间降至300ms以内；长列表虚拟滚动；内存管理。</li>
-    <li><strong>移动端适配：</strong>rem+viewport，处理iOS安全区域、键盘遮挡等，Polyfill低版本特性。</li>
-    <li><strong>安全与风控：</strong>敏感数据RSA加密，禁止缓存敏感页面，集成安全键盘。</li>
+    <li><strong>通信封装：</strong>设计基于回调 ID 的 Native 与 Web 双向通信协议并完成 Promise 化，统一兼容 iOS WKWebView 与 Android WebView。</li>
+    <li><strong>能力接入：</strong>封装设备信息、相机、相册及生物识别等 20+ 项 Native 能力，并提供低版本 WebView 的兼容与降级处理。</li>
+    <li><strong>加载优化：</strong>推动增量离线包、版本检测、CDN 回源和 WebView 预加载落地，结合骨架屏缩短核心页面首屏等待时间。</li>
+    <li><strong>金融场景适配：</strong>处理 iOS 安全区域、键盘遮挡及低版本兼容问题，并配合 Native 落实敏感数据加密、页面禁缓存和安全键盘能力。</li>
 </ul>
-<p><span class="highlight">个人贡献：</span>独立完成前端架构设计、JSBridge封装与文档编写，推动离线包方案落地并主导H5模块开发，后续该方案被公司其他金融App复用。</p>
+</section>
 </body>
 </html>
