@@ -216,7 +216,7 @@
 
 <div class="job-title">
     <span class="company">西部信托有限公司 · 高级前端开发工程师</span>
-    <span class="date">2023.10 – 2026.07</span>
+    <span class="date">2023.10 – 2026.08</span>
 </div>
 <ul>
     <li>担任信托业务中台前端负责人，负责架构方案、技术评审、公共能力建设和发布流程治理，推动多个核心业务模块独立交付。</li>
@@ -250,20 +250,20 @@
 <section class="project-block">
 <div class="project-title">
     <span class="project-name">信托业务中台管理系统（微前端架构升级 + AI 智能模块）</span>
-    <span class="date">2023.10 – 2026.07</span>
+    <span class="date">2023.10 – 2026.08</span>
 </div>
 <div class="tech-stack">
     <strong>技术栈：</strong>Vue3 + TypeScript + Vite + Qiankun + pnpm Monorepo + Ant Design Vue + SSE + PDF.js + Web Worker
 </div>
-<p><span class="highlight">核心成果：</span>完成 8 个核心业务模块的微前端拆分与统一治理，首屏加载速度提升 55%；交付 AI 合同审核的完整前端交互链路，支撑合同摘要、风险点识别及反馈流程线上化。</p>
-<p><span class="highlight">关键工作：</span></p>
+<p><span class="highlight">项目背景：</span>原系统包含 8 个耦合业务模块，多团队并行开发时存在发布相互影响、公共能力重复建设及页面状态难保持等问题，同时需落地面向长文档的 AI 合同审核流程。</p>
+<p><span class="highlight">关键工作与难点：</span></p>
 <ul>
-    <li><strong>架构拆分：</strong>基于 Qiankun 划分主应用与业务子应用，通过 pnpm workspace 管理公共组件、工具及配置，实现子应用独立开发和部署。</li>
-    <li><strong>微前端治理：</strong>解决样式隔离、跨应用通信、公共依赖复用和页面状态保持问题，降低多应用协作与维护成本。</li>
-    <li><strong>加载性能：</strong>结合路由懒加载、资源预加载和骨架屏优化关键加载路径，并通过监控数据验证首屏性能改善。</li>
-    <li><strong>AI 前端交互：</strong>完成文档上传与预览、SSE 流式结果展示、合同摘要、风险点高亮及反馈评分；文档解析、向量检索和 LLM 推理由后端服务完成。</li>
-    <li><strong>长文本体验：</strong>使用 Web Worker 分担长文本处理，通过 IndexedDB 缓存历史分析结果，减少重复请求和主线程阻塞。</li>
+    <li><strong>架构治理：</strong>主导 Qiankun + pnpm Monorepo 架构升级，划分主、子应用边界并统一通信约束、样式隔离和公共依赖管理，使业务子应用具备独立开发与发布能力。</li>
+    <li><strong>AI 交互闭环：</strong>设计 SSE 增量结果消费与状态管理，打通合同摘要、风险结果与 PDF 原文定位高亮，并完善异常中断提示、重新分析和用户反馈流程。</li>
+    <li><strong>性能与状态：</strong>通过路由懒加载、资源预加载和骨架屏缩短关键加载路径；以 Web Worker 分担长文本处理、IndexedDB 缓存分析记录，减少主线程阻塞和重复请求。</li>
+    <li><strong>测试建设方案：</strong>计划借助 Codex 等 AI 编程工具生成与完善单元测试用例、梳理边界场景并分析测试失败；使用 Vitest 补齐 SSE 增量结果解析、审核状态转换及风险结果与 PDF 原文定位映射的测试，覆盖正常、空数据、异常数据和分析中断场景；结合 Vue Test Utils 验证关键组件交互，并计划接入 CI/CD 自动执行。</li>
 </ul>
+<p><span class="highlight">核心成果：</span>完成 8 个核心业务模块的拆分与统一治理，首屏加载性能提升 55%；实现子应用独立交付，并推动合同摘要、风险识别及反馈流程线上化。</p>
 </section>
 
 <!-- 维信金科金融仪表盘 -->
@@ -275,13 +275,14 @@
 <div class="tech-stack">
     <strong>技术栈：</strong>Vue2 + Webpack + ECharts + Vuex + Axios + WebSocket + 响应式大屏适配
 </div>
-<p><span class="highlight">核心成果：</span>交付面向管理层的交易量、活跃度和风险指标实时看板，首屏加载时间从 <strong>2.5s 降至 1.2s</strong>，并在多种常用展示分辨率下保持稳定呈现。</p>
-<p><span class="highlight">关键工作：</span></p>
+<p><span class="highlight">项目背景：</span>管理层看板需持续呈现交易量、活跃度和风险指标，面对高频数据推送、多图表联动、历史数据累积及长时间运行等性能与稳定性挑战。</p>
+<p><span class="highlight">关键工作与难点：</span></p>
 <ul>
-    <li><strong>实时渲染：</strong>使用 WebSocket 接收数据，通过缓冲队列、节流更新和 ECharts 增量渲染控制高频刷新开销。</li>
-    <li><strong>数据交互：</strong>结合 dataset、dataZoom 与采样策略承载历史数据，并通过 Vuex 管理多图表联动状态及定向更新。</li>
-    <li><strong>运行稳定性：</strong>封装包含心跳检测、断线重连和异常恢复的 WebSocket 管理器，并通过弹性布局、视口单位及媒体查询完成多分辨率适配。</li>
+    <li><strong>高频渲染：</strong>针对持续推送引发的重复渲染和卡顿，设计数据缓冲、节流与合并更新机制，结合 ECharts 增量渲染、采样和定向刷新控制主线程开销。</li>
+    <li><strong>连接稳定性：</strong>封装 WebSocket 管理器，建立心跳检测、断线重连和异常恢复机制，保障大屏长时间运行及网络波动后的数据恢复。</li>
+    <li><strong>多屏适配：</strong>统一设计稿缩放基准，结合视口单位、媒体查询和图表 resize 协调，处理常用分辨率及极端宽高比下的布局与图表变形问题。</li>
 </ul>
+<p><span class="highlight">核心成果：</span>交付面向管理层的实时监控看板，首屏加载时间从 <strong>2.5s 降至 1.2s</strong>，并实现高频数据下的平稳刷新、网络异常恢复和多分辨率稳定呈现。</p>
 </section>
 
 <!-- 维信卡卡贷混合Web开发 -->
@@ -293,14 +294,14 @@
 <div class="tech-stack">
     <strong>技术栈：</strong>Vue2 + Webpack + JSBridge + 离线包（增量更新） + IndexedDB/localStorage + rem/vw 移动端适配 + RSA/AES 加密
 </div>
-<p><span class="highlight">核心成果：</span>主导信用卡还款、贷款申请和账单查询等核心 H5 模块建设，首屏加载时间从 <strong>2.2s 降至 0.8s</strong>，相关方案后续复用于公司其他金融 App。</p>
-<p><span class="highlight">关键工作：</span></p>
+<p><span class="highlight">项目背景：</span>负责信用卡还款、贷款申请和账单查询等核心 H5 链路，需要统一 iOS/Android WebView 能力差异，并兼顾弱网加载、版本发布安全和金融数据保护。</p>
+<p><span class="highlight">关键工作与难点：</span></p>
 <ul>
-    <li><strong>通信封装：</strong>设计基于回调 ID 的 Native 与 Web 双向通信协议并完成 Promise 化，统一兼容 iOS WKWebView 与 Android WebView。</li>
-    <li><strong>能力接入：</strong>封装设备信息、相机、相册及生物识别等 20+ 项 Native 能力，并提供低版本 WebView 的兼容与降级处理。</li>
-    <li><strong>加载优化：</strong>推动增量离线包、版本检测、CDN 回源和 WebView 预加载落地，结合骨架屏缩短核心页面首屏等待时间。</li>
-    <li><strong>金融场景适配：</strong>处理 iOS 安全区域、键盘遮挡及低版本兼容问题，并配合 Native 落实敏感数据加密、页面禁缓存和安全键盘能力。</li>
+    <li><strong>跨端通信：</strong>主导基于回调 ID 的双向协议设计，以 Promise 封装、统一错误模型和版本兼容策略屏蔽平台差异，沉淀设备、相机及生物识别等 20+ 项 Native 能力。</li>
+    <li><strong>加载与容灾：</strong>推动增量离线包、版本校验、缓存失效和 CDN 异常回源机制落地，配合 WebView 预加载与骨架屏，在弱网和资源更新失败时保障核心流程可用。</li>
+    <li><strong>金融场景治理：</strong>统一处理安全区域、键盘遮挡和页面生命周期问题，并配合 Native 落实敏感数据加密、页面禁缓存及安全键盘能力。</li>
 </ul>
+<p><span class="highlight">核心成果：</span>完成核心金融 H5 模块及跨端基础能力建设，首屏加载时间从 <strong>2.2s 降至 0.8s</strong>；JSBridge 与离线包方案后续复用于公司其他金融 App。</p>
 </section>
 </body>
 </html>
